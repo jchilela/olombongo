@@ -60,7 +60,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @available(iOS 8.0, *)
     @IBAction func signUp(sender: AnyObject) {
         if username.text == "" || password.text == ""{
-            displayAlert("Missing field(s)", message: "Username and password required")
+            displayAlert("Campos em branco", message: "Utilizador e Password requeridos")
             
         }else{
            
@@ -161,11 +161,26 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var username: UITextField!
     
+    @IBOutlet weak var or: UILabel!
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
+        
+        
+        // Controlar o botão
+        signUpButton.setTitle("Entrar", forState: UIControlState.Normal)
+        //taggleSignupButton.setTitle("Switch to signup", forState: UIControlState.Normal)
+        signUpState = false
+        riderLabel.alpha = 0
+        driverLabel.alpha = 0
+        `switch`.alpha = 0
+        
+        taggleSignupButton.alpha = 0
+        or.alpha = 0
+        
         // Do any additional setup after loading the view, typically from a nib.
-        signUpState = true
+        signUpState = false
       
         
         //Looks for single or multiple taps.
