@@ -12,6 +12,10 @@ import Parse
 
 class ViewController: UIViewController, UITextFieldDelegate {
     
+    @IBAction func voltar(sender: AnyObject) {
+        performSegueWithIdentifier("principal2", sender: self)
+        
+    }
     var signUpState = false
 
     @IBAction func login(sender: AnyObject) {
